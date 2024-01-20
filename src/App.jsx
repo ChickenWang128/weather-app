@@ -1,4 +1,4 @@
-import { useState, useContext, createContext } from 'react';
+import { useState, createContext } from 'react';
 import Search from './components/search/search';
 import CurrentWeather from './components/current-weather/current-weather';
 import ForecastWeekDays from './components/forecast/forecast-weekdays';
@@ -10,7 +10,8 @@ export const ForecastContext = createContext(null);
 function App() {
   const [currentWeather, setCurrentWeather] = useState(null);
   const [forecast, setForecast] = useState(null);
-  console.log(import.meta.env);
+
+  console.log(WEATHER_API_KEY);
 
   const handleOnSearchChange = (searchData) => {
     const [lat, lon] = searchData.value.split(' ');
