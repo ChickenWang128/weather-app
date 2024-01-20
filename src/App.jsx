@@ -12,6 +12,7 @@ function App() {
   const [forecast, setForecast] = useState(null);
 
   console.log(WEATHER_API_KEY);
+  console.log('test');
 
   const handleOnSearchChange = (searchData) => {
     const [lat, lon] = searchData.value.split(' ');
