@@ -27,6 +27,10 @@ jobs:
         env:
           OPENWEATHER_KEY: ${{ secrets.OPENWEATHER_KEY}}
           RAPIDAPI_KEY: ${{ secrets.RAPIDAPI_KEY}}
+      - name: Print Secrets
+        run: |
+          echo "OpenWeather Key: $OPENWEATHER_KEY"
+          echo "RapidAPI Key: $RAPIDAPI_KEY"
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v2
