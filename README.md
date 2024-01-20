@@ -1,8 +1,8 @@
-# React + Vite
+To make the app work you need to add your own Rapid API key and Open Weather API key.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Steps:
+1) In the root directory create a .env file
+2) In the .env file have two lines as stated below but replace enterKeyHere with your actual keys
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+VITE_RAPIDAPI_KEY='enterKeyHere'<br>
+VITE_OPENWEATHER_KEY='enterKeyHere'
