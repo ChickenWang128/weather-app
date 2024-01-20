@@ -10,10 +10,6 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
 
-    env:
-      OPENWEATHER_KEY: ${{ secrets.OPENWEATHER_KEY}}
-      RAPIDAPI_KEY: ${{ secrets.RAPIDAPI_KEY}}
-
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
@@ -28,16 +24,6 @@ jobs:
 
       - name: Build project
         run: npm run build
-
-      - name: Print Secrets
-        run: |
-          echo "OpenWeather Key: $OPENWEATHER_KEY"
-          echo "RapidAPI Key: $RAPIDAPI_KEY"
-
-      - name: Print Secrets
-        run: |
-          echo "OpenWeather Key: $OPENWEATHER_KEY"
-          echo "RapidAPI Key: $RAPIDAPI_KEY"
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v2
