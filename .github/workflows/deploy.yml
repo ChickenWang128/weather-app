@@ -5,6 +5,10 @@ on:
     branches:
       - main
 
+env:
+  VITE_OPENWEATHER_KEY: ${{ secrets.VITE_OPENWEATHER_KEY }}
+  VITE_RAPIDAPI_KEY: ${{ secrets.VITE_RAPIDAPI_KEY }}
+
 jobs:
   build:
     name: Build
@@ -24,9 +28,11 @@ jobs:
 
       - name: Build project
         run: npm run build
-        env:
-          VITE_OPENWEATHER_KEY: ${{ secrets.VITE_OPENWEATHER_KEY}}
-          VITE_RAPIDAPI_KEY: ${{ secrets.VITE_RAPIDAPI_KEY}}
+        
+      - name: Debug - Show Environment Variables after Build
+        run: |
+          echo "VITE_OPENWEATHER_KEY: $VITE_OPENWEATHER_KEY"
+          echo "VITE_RAPIDAPI_KEY: $VITE_RAPIDAPI_KEY"
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v2
@@ -46,6 +52,11 @@ jobs:
         with:
           name: production-files
           path: ./dist
+
+      - name: Debug - Show Environment Variables in Deploy
+        run: |
+          echo "VITE_OPENWEATHER_KEY: $VITE_OPENWEATHER_KEY"
+          echo "VITE_RAPIDAPI_KEY: $VITE_RAPIDAPI_KEY"
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
