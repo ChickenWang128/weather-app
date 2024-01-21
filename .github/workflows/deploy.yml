@@ -11,8 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     
     env:
-      OPENWEATHER_KEY: ${{ secrets.OPENWEATHER_KEY}}
-      RAPIDAPI_KEY: ${{ secrets.RAPIDAPI_KEY}}
+      VITE_OPENWEATHER_KEY: ${{ secrets.VITE_OPENWEATHER_KEY}}
+      VITE_RAPIDAPI_KEY: ${{ secrets.VITE_RAPIDAPI_KEY}}
 
     steps:
       - name: Checkout repo
@@ -41,8 +41,8 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      OPENWEATHER_KEY: ${{ secrets.OPENWEATHER_KEY}}
-      RAPIDAPI_KEY: ${{ secrets.RAPIDAPI_KEY}}
+      VITE_OPENWEATHER_KEY: ${{ secrets.VITE_OPENWEATHER_KEY}}
+      VITE_RAPIDAPI_KEY: ${{ secrets.VITE_RAPIDAPI_KEY}}
     
     if: github.ref == 'refs/heads/main'
 
